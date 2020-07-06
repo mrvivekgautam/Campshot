@@ -1,0 +1,28 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+	<h1>Welcome to CampShot</h1>
+		<p>View our handpicked Camping Sites made with Love!</p>
+		<p><a class="btn btn-primary btn-lg" href="/campshots/new">Add a new CampShot</a></p>
+    </header>
+		
+		<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+	<% for(var i=0;i<campshots.length;i++){ %>
+		<div class="col-md-3 col-sm-6">	
+			<div class="thumbnail">  
+	<img src="<%= campshots[i].image %>">
+			<div class="caption">
+				<h4><%= campshots[i].name %></h4>
+			</div>
+				<p>
+					<a class="btn btn-primary" href="/campshots/<%= campshots[i]._id %>"> Shoot!</a>
+				</p>
+		</div>
+		</div>
+<% } %>
+		</div>
+</div>
+
+<%- include("../partials/footer") %>
